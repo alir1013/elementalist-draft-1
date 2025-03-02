@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2u5pbty70iqg"]
+
+[ext_resource type="Script" path="res://Scripts/Card.gd" id="1_r3m8r"]
+[ext_resource type="Texture2D" uid="uid://c6bmvjn1sm301" path="res://Elementalist Game Assets/Cards/AlCard.png" id="2_gomfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6drms"]
+size = Vector2(128, 190)
+
+[node name="Card" type="Node2D"]
+position = Vector2(150, 890)
+script = ExtResource("1_r3m8r")
+
+[node name="CardImage" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-3.8147e-06, 1.52588e-05)
+scale = Vector2(0.484615, 0.534483)
+texture = ExtResource("2_gomfo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_6drms")
+
+[node name="AtomicNumber" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 128.0
+offset_top = -27.0
+offset_right = 168.0
+offset_bottom = 13.0
+
+[node name="ValenceElectrons" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Electronegativity" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.00784314)
+offset_left = -30.0
+offset_top = 51.0
+offset_right = 46.0
+offset_bottom = 51.0
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
