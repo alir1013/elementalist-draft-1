@@ -13,8 +13,13 @@ func _ready() -> void:
 	$RichTextLabel.text = str(player_deck.size())
 	card_database_reference = preload("res://Scripts/CardDatabase.gd")
 	
-
+	
 func draw_card():
+	
+	if $"../PlayerHand".player_hand.size() >= 6:
+		return 
+	
+	
 	var card_drawn_name = player_deck[0]
 	player_deck.erase(card_drawn_name)
 
@@ -25,6 +30,7 @@ func draw_card():
 		$RichTextLabel.visible = false
 
 	$RichTextLabel.text = str(player_deck.size())
+	
 	var card_scene = preload(CARD_SCENE_PATH)
 	var new_card = card_scene.instantiate()
 	var card_image_path = str("res://Elementalist Game Assets/Cards/" + card_drawn_name + "Card.png")

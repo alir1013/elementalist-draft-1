@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4nkkax1cnx3d"]
+[gd_scene load_steps=7 format=3 uid="uid://d4nkkax1cnx3d"]
 
 [ext_resource type="Script" path="res://Scripts/CardManager.gd" id="1_6l7x1"]
+[ext_resource type="Texture2D" uid="uid://ujoc3td3dg0g" path="res://Elementalist Game Assets/Picture1.png" id="1_j1o43"]
 [ext_resource type="Script" path="res://Scripts/PlayerHand.gd" id="3_k7oey"]
 [ext_resource type="PackedScene" uid="uid://x7v358ohfdyx" path="res://Scenes/CardSlot.tscn" id="3_uxtwi"]
 [ext_resource type="PackedScene" uid="uid://buu601f1u33y2" path="res://Scenes/Deck.tscn" id="4_5385a"]
@@ -9,16 +10,23 @@
 [node name="Main" type="Node2D"]
 position = Vector2(-1, 12)
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(969, 541)
+scale = Vector2(2.00199, 3.24324)
+texture = ExtResource("1_j1o43")
+
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("1_6l7x1")
 
 [node name="CardSlot" parent="." instance=ExtResource("3_uxtwi")]
-position = Vector2(965, 417)
+position = Vector2(947, 539)
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("3_k7oey")
 
 [node name="Deck" parent="." instance=ExtResource("4_5385a")]
+z_index = 3
 
 [node name="InputManager" type="Node2D" parent="."]
 position = Vector2(7, 7)

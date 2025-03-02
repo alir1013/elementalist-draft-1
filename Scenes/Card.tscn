@@ -11,7 +11,7 @@ position = Vector2(150, 890)
 script = ExtResource("1_r3m8r")
 
 [node name="CardImage" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 position = Vector2(-3.8147e-06, 1.52588e-05)
 scale = Vector2(0.484615, 0.534483)
 texture = ExtResource("2_gomfo")
